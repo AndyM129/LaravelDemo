@@ -27,6 +27,12 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/', 'HomeController@index');
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'HomeController@index');                                        //  首页
+    Route::get('/home', 'HomeController@index');                                    //  首页
+    Route::get('/category/list/{categoryId}', 'CategoryController@listView');       //  指定分类列表页
+    Route::get('/book/detail/{bookId}', 'BookController@detail');                   //  图书详情页
+    Route::get('/shoppingCart', 'ShoppingCartController@index');                    //  购物车
+    Route::get('/pay', 'PayController@index');                                      //  支付页
+    Route::get('/pay/detail/{orderId}', 'PayController@detail');                    //  支付详情页
+    Route::get('/pay/result/{orderId}', 'PayController@result');                    //  支付结果页
 });
