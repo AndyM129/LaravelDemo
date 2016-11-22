@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel Demo</title>
+    <title>Book Store</title>
 
     <link href="//cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
@@ -26,7 +26,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel Demo
+                    Book Store
                 </a>
             </div>
 
@@ -34,6 +34,17 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Categories <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            @foreach($categories as $category)
+                            <li><a href="{{ url('/') }}"><i class="fa fa-btn"></i>{{ $category->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -49,6 +60,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/') }}"><i class="fa fa-btn"></i>My Cart</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
