@@ -1,4 +1,4 @@
-# Laravel Demo
+# Laravel Demo - Book Store
 
 As title, this is a Laravel Demo.
 
@@ -16,6 +16,7 @@ As title, this is a Laravel Demo.
     - jQuery 和 BootStrap 替换为了国内的 CDN，更快更稳定了
     - 自定义404错误页
 - 2016.11.22
+    - 添加"分类"模块及展示
 
 
 
